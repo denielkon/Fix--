@@ -94,14 +94,17 @@ h6 {
   src: local("Muller Medium"), url("../fonts/MullerMedium.woff");
 }
 
+body.no-scrool {
+  overflow: hidden;
+}
+
 body {
-  position: relative;
   font-family: 'Muller Medium';
 }
 
 body > .video-wrapper {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   display: none;
   top: 0;
   z-index: 3;
@@ -608,6 +611,10 @@ body .wrapper > .info-card > .info-card-wrapper > .info-card-right > .accent-car
   body .wrapper > .info-card > .info-card-wrapper {
     justify-content: flex-start;
     flex-direction: column;
+  }
+
+  body .wrapper > .info-card > .info-card-wrapper .card {
+    padding: 33px 0 62px 0;
   }
 
   body .wrapper > .info-card > .info-card-wrapper > .info-card-left {
