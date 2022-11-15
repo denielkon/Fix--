@@ -9,7 +9,18 @@ const submit = document.querySelectorAll('form > input');
 const form = document.querySelectorAll('.form');
 const successForm = document.querySelectorAll('.form .success-from-wrapper');
 const body = document.querySelectorAll('body');
+const anchors = document.querySelectorAll('a[href*="#"]')
 
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+     e.preventDefault();
+     const blockID = anchor.getAttribute('href').substr(1);
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
 
 input[2].addEventListener('input', function () {
    let x = input[2].value;
@@ -129,7 +140,6 @@ document.querySelectorAll('.slider-next')[0].addEventListener('click', function 
    }
    addSliderItemClass()
    sliderTrack[0].style.transform = 'translate(-' + sliderTrack[0].style.width / 2 + 'px)';
-   
 })
 
 document.querySelectorAll('.slider-prev')[0].addEventListener('click', function () {
